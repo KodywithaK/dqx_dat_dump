@@ -566,7 +566,7 @@ def build_etp(json_file: list, src_etp: str):
 
 def build_all():
     # json_files = glob.glob("new_json/en/*.json")
-    json_files = glob.glob("../../../../../dqx-offline-localization/FINAL/pakchunk0-Switch_P/Holiday/Content/NonAssets/ETP/*.json")
+    json_files = glob.glob("../../../dqx-offline-localization/FINAL/pakchunk0-Switch_P/Holiday/Content/NonAssets/ETP/*.json")
     for json_file in json_files:
         etp = os.path.basename(json_file).replace(".json", ".etp")
         print(f"Packing {etp}.")
