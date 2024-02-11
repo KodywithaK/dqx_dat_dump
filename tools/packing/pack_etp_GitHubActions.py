@@ -28,7 +28,7 @@ def read_json_file(file: str):
                 print("Reading file: ", file) # mike9k1, print for errored file
                 contents = f.read()
                 return json.loads(contents)
-            except Exception, e:
+            except Exception as e:
                 print(e)
 
 
