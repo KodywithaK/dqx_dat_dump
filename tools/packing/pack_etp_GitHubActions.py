@@ -22,15 +22,9 @@ from tools.dump_etps.dqxcrypt.dqxcrypt import (
 
 
 def read_json_file(file: str):
-    # while True:
-        with open(file, "r", encoding="utf-8") as f:
-            # try:
-                # print("Reading file: ", file) # mike9k1, print for errored file
-                contents = f.read()
-                return json.loads(contents)
-            # except Exception as e:
-            #     print(e)
-            #     continue
+    with open(file, "r", encoding="utf-8") as f:
+        contents = f.read()
+    return json.loads(contents)
 
 
 def align_file(file_obj: object, alignment: int):
@@ -580,14 +574,17 @@ def build_all():
             etp_file = f"../dump_etps/etps/{etp}"
             build_etp(json_file=json_file, src_etp=etp_file)
         except Exception as e:
-            print(e)
+            print(f"{json_file} Error At:{e}")
 
     json_files = glob.glob("../../../dqx-offline-localization/FINAL/pakchunk0-Switch_P/Holiday/Content/NonAssets/ETP/*.json")
     for json_file in json_files:
-        etp = os.path.basename(json_file).replace(".json", ".etp")
-        print(f"Packing {etp}.")
-        etp_file = f"../dump_etps/etps/{etp}"
-        build_etp(json_file=json_file, src_etp=etp_file)
+        try:
+            etp = os.path.basename(json_file).replace(".json", ".etp")
+            print(f"Packing {etp}.")
+            etp_file = f"../dump_etps/etps/{etp}"
+            build_etp(json_file=json_file, src_etp=etp_file)
+        except Exception as e:
+            print(f"{json_file} Error At:{e}")
 
 
 def recrypt_file(file: str):
