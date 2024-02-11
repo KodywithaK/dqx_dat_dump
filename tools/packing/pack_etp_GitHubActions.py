@@ -25,11 +25,9 @@ def read_json_file(file: str):
     while True:
         with open(file, "r", encoding="utf-8") as f:
             try:
+                print("Reading file: ", file) # mike9k1, print for errored file
                 contents = f.read()
-                return json.loads(contents)
-            except:
-                print("Errored file: ", file) # mike9k1, print for errored file
-                continue
+                return json.loads(0, contents, continue)
 
 
 def align_file(file_obj: object, alignment: int):
