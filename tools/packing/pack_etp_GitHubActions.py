@@ -574,12 +574,13 @@ def build_all():
     # json_files = glob.glob("new_json/en/*.json")
     json_files = glob.glob("../../../dqx-offline-localization/BACKLOG/pakchunk0-Switch_P/Holiday/Content/NonAssets/ETP/ML/*.json")
     for json_file in json_files:
-        etp = os.path.basename(json_file).replace(".json", ".etp")
-        print(f"Packing {etp}.")
-        etp_file = f"../dump_etps/etps/{etp}"
-        build_etp(json_file=json_file, src_etp=etp_file)
-    except Exception as e:
-        print(e)
+        try:
+            etp = os.path.basename(json_file).replace(".json", ".etp")
+            print(f"Packing {etp}.")
+            etp_file = f"../dump_etps/etps/{etp}"
+            build_etp(json_file=json_file, src_etp=etp_file)
+        except Exception as e:
+            print(e)
 
     json_files = glob.glob("../../../dqx-offline-localization/FINAL/pakchunk0-Switch_P/Holiday/Content/NonAssets/ETP/*.json")
     for json_file in json_files:
