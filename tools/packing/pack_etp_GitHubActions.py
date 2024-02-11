@@ -30,6 +30,7 @@ def read_json_file(file: str):
                 return json.loads(contents)
             except Exception as e:
                 print(e)
+                continue
 
 
 def align_file(file_obj: object, alignment: int):
