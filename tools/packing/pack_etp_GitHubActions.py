@@ -578,6 +578,8 @@ def build_all():
         print(f"Packing {etp}.")
         etp_file = f"../dump_etps/etps/{etp}"
         build_etp(json_file=json_file, src_etp=etp_file)
+    except Exception as e:
+        print(e)
 
     json_files = glob.glob("../../../dqx-offline-localization/FINAL/pakchunk0-Switch_P/Holiday/Content/NonAssets/ETP/*.json")
     for json_file in json_files:
