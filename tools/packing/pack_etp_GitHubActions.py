@@ -27,7 +27,9 @@ def read_json_file(file: str):
             try:
                 print("Reading file: ", file) # mike9k1, print for errored file
                 contents = f.read()
-                return json.loads(0, contents, continue)
+                return json.loads(contents)
+            except Exception, e:
+                print(e)
 
 
 def align_file(file_obj: object, alignment: int):
