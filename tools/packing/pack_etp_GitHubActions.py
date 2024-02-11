@@ -25,7 +25,7 @@ def read_json_file(file: str):
     # while True:
         with open(file, "r", encoding="utf-8") as f:
             # try:
-                print("Reading file: ", file) # mike9k1, print for errored file
+                # print("Reading file: ", file) # mike9k1, print for errored file
                 contents = f.read()
                 return json.loads(contents)
             # except Exception as e:
