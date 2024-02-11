@@ -22,13 +22,14 @@ from tools.dump_etps.dqxcrypt.dqxcrypt import (
 
 
 def read_json_file(file: str):
-    with open(file, "r", encoding="utf-8") as f:
-        try:
-            contents = f.read()
-            return json.loads(contents)
-        except:
-            print("Reading file: ", file) # mike9k1, print for errored file
-            continue
+    while True:
+        with open(file, "r", encoding="utf-8") as f:
+            try:
+                contents = f.read()
+                return json.loads(contents)
+            except:
+                print("Errored file: ", file) # mike9k1, print for errored file
+                continue
 
 
 def align_file(file_obj: object, alignment: int):
