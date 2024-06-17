@@ -1,0 +1,1 @@
+"..\..\..\..\dqx_dat_dump\tools\packing\new_etp\*" "../../../Holiday/Content/NonAssets/ETP_ko/"
