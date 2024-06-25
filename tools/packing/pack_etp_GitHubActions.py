@@ -570,21 +570,21 @@ def build_all():
     for json_file in json_files:
         try:
             etp = os.path.basename(json_file).replace(".json", ".etp")
-            print(f"Packing {etp}.")
             etp_file = f"../dump_etps/etps/{etp}"
+            print(f"\e[32mPacked {etp}.\e[0m")
             build_etp(json_file=json_file, src_etp=etp_file)
         except Exception as e:
-            print(f"{json_file} Error At:{e}")
+            print(f"\e[31m{json_file}\nError At:{e}\e[0m")
 
     json_files = glob.glob("../../../dqx-offline-localization/FINAL/pakchunk0-Switch_P/Holiday/Content/NonAssets/ETP/*.json")
     for json_file in json_files:
         try:
             etp = os.path.basename(json_file).replace(".json", ".etp")
-            print(f"Packing {etp}.")
             etp_file = f"../dump_etps/etps/{etp}"
+            print(f"\e[32mPacked {etp}.\e[0m")
             build_etp(json_file=json_file, src_etp=etp_file)
         except Exception as e:
-            print(f"{json_file} Error At:{e}")
+            print(f"\e[31m{json_file}\nError At:{e}\e[0m")
 
 
 def recrypt_file(file: str):
