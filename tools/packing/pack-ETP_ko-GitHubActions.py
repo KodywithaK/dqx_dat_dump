@@ -2,6 +2,8 @@ import argparse
 import glob
 import json
 import os
+import os
+os.system('color')
 from struct import unpack, iter_unpack
 from subprocess import run
 import sqlite3
@@ -574,10 +576,10 @@ def build_all():
             etp = os.path.basename(json_file).replace(".json", ".etp")
             # etp_file = f"../dump_etps/etps/{etp}"
             etp_file = f"../dump_etps/ETP_ko/{etp}" #KwK
-            print(f"\e[32mPacked {etp}.\e[0m")
+            print(f"\033[32mPacked {etp}.\033[0m")
             build_etp(json_file=json_file, src_etp=etp_file)
         except Exception as e:
-            print(f"\e[31m{json_file}\nError At:{e}\e[0m")
+            print(f"\033[31m{json_file}\nError At:{e}\033[0m")
 
     json_files = glob.glob("../../../dqx-offline-localization/Build_ID-14531340/FINAL/Game/Content/NonAssets/ETP_ko/*.json") #KwK
     for json_file in json_files:
@@ -585,10 +587,10 @@ def build_all():
             etp = os.path.basename(json_file).replace(".json", ".etp")
             # etp_file = f"../dump_etps/etps/{etp}"
             etp_file = f"../dump_etps/ETP_ko/{etp}" #KwK
-            print(f"\e[32mPacked {etp}.\e[0m")
+            print(f"\033[32mPacked {etp}.\033[0m")
             build_etp(json_file=json_file, src_etp=etp_file)
         except Exception as e:
-            print(f"\e[31m{json_file}\nError At:{e}\e[0m")
+            print(f"\033[31m{json_file}\nError At:{e}\033[0m")
 
 
 def recrypt_file(file: str):
