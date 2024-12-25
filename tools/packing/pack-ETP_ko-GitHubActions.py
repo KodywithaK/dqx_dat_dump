@@ -2,7 +2,6 @@ import argparse
 import glob
 import json
 import os
-import os
 os.system('color')
 from struct import unpack, iter_unpack
 from subprocess import run

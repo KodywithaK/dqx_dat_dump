@@ -25,7 +25,7 @@ from tools.dump_etps.dqxcrypt.dqxcrypt import (
 def read_json_file(file: str):
     with open(file, "r", encoding="utf-8") as f:
         contents = f.read()
-    return json.loads(contents)
+        return json.loads(contents)
 
 
 def align_file(file_obj: object, alignment: int):
@@ -567,25 +567,25 @@ def build_etp(json_file: list, src_etp: str):
 
 def build_all():
     # json_files = glob.glob("new_json/en/*.json")
-    json_files = glob.glob("../../../dqx-offline-localization/BACKLOG/pakchunk0-Switch_P/Holiday/Content/NonAssets/ETP/ML/*.json")
+    json_files = glob.glob("../../../dqx-offline-localization/BACKLOG/pakchunk0-Switch_P/Holiday/Content/NonAssets/ETP/ML/*.json") #KwK
     for json_file in json_files:
         try:
             etp = os.path.basename(json_file).replace(".json", ".etp")
             etp_file = f"../dump_etps/etps/{etp}"
-            print(f"\e[32mPacked {etp}.\e[0m")
+            print(f"\033[32mPacked {etp}.\033[0m") #KwK
             build_etp(json_file=json_file, src_etp=etp_file)
         except Exception as e:
-            print(f"\033[31m{json_file}\nError At:{e}\033[0m")
+            print(f"\033[31m{json_file}\nError At:{e}\033[0m") #KwK
 
-    json_files = glob.glob("../../../dqx-offline-localization/FINAL/pakchunk0-Switch_P/Holiday/Content/NonAssets/ETP/*.json")
+    json_files = glob.glob("../../../dqx-offline-localization/FINAL/pakchunk0-Switch_P/Holiday/Content/NonAssets/ETP/*.json") #KwK
     for json_file in json_files:
         try:
             etp = os.path.basename(json_file).replace(".json", ".etp")
             etp_file = f"../dump_etps/etps/{etp}"
-            print(f"\e[32mPacked {etp}.\e[0m")
+            print(f"\033[32mPacked {etp}.\033[0m") #KwK
             build_etp(json_file=json_file, src_etp=etp_file)
         except Exception as e:
-            print(f"\033[31m{json_file}\nError At:{e}\033[0m")
+            print(f"\033[31m{json_file}\nError At:{e}\033[0m") #KwK
 
 
 def recrypt_file(file: str):
