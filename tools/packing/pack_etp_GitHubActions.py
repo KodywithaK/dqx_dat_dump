@@ -53,7 +53,8 @@ def determine_etp_version(file: str) -> int:
 
 
 def find_versioned_files(version: int):
-    etps = glob.glob("../dump_etps/etps/*.etp")
+    # etps = glob.glob("../dump_etps/etps/*.etp")
+    etps = glob.glob("../dump_etps/AppID_1358750/BuildID_14529657/REFERENCES/pakchunk0-{PLATFORM}.pak/Game/Content/NonAssets/ETP/*.etp") #KwK
     files = []
     for etp in etps:
         with open(etp, "rb") as f:
@@ -567,13 +568,13 @@ def build_etp(json_file: list, src_etp: str):
 
 def build_all():
     # json_files = glob.glob("new_json/en/*.json")
-    json_files = glob.glob("../../../dqx-offline-localization/BACKLOG/pakchunk0-Switch_P/Holiday/Content/NonAssets/ETP/ML/*.json") #KwK
+    json_files = glob.glob("../../../dqx-offline-localization/BACKLOG/pakchunk0-Switch_P/Holiday/Content/NonAssets/ETP/*.json") #KwK
     for json_file in json_files:
         try:
             etp = os.path.basename(json_file).replace(".json", ".etp")
             etp_file = f"../dump_etps/etps/{etp}"
-            print(f"\033[32mPacked {etp}.\033[0m") #KwK
             build_etp(json_file=json_file, src_etp=etp_file)
+            print(f"\033[32mPacked {etp}.\033[0m") #KwK
         except Exception as e:
             print(f"\033[31m{json_file}\nError At:{e}\033[0m") #KwK
 
@@ -582,8 +583,8 @@ def build_all():
         try:
             etp = os.path.basename(json_file).replace(".json", ".etp")
             etp_file = f"../dump_etps/etps/{etp}"
-            print(f"\033[32mPacked {etp}.\033[0m") #KwK
             build_etp(json_file=json_file, src_etp=etp_file)
+            print(f"\033[32mPacked {etp}.\033[0m") #KwK
         except Exception as e:
             print(f"\033[31m{json_file}\nError At:{e}\033[0m") #KwK
 
