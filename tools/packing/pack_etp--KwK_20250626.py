@@ -597,7 +597,8 @@ def build_all():
 ########################################################################################################################################################################################################
     # json_files = glob.glob("new_json/en/*.json")
     # json_files = glob.glob("../../../dqx-offline-localization/BACKLOG/pakchunk0-Switch_P/Holiday/Content/NonAssets/ETP/*.json") #KwK, old format
-    json_files = glob.glob("../../../dqx-offline-localization/pakchunk0-WindowsNoEditor.pak/Game/Content/NonAssets/ETP/*.json") #KwK, new format
+    # json_files = glob.glob("../../../dqx-offline-localization/pakchunk0-WindowsNoEditor.pak/Game/Content/NonAssets/ETP/*.json") #KwK, new format
+    json_files = glob.glob("../../../dqx-offline-localization/Steam/App_ID-1358750/Build_ID-14529657/pakchunk0-WindowsNoEditor.pak/Game/Content/NonAssets/ETP/*.json") #KwK, new format - 20250626
     for json_file in json_files:
         try:
             etp = os.path.basename(json_file).replace(".json", ".etp")
